@@ -8,6 +8,7 @@ use app\models\MovieSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * MovieController implements the CRUD actions for Movie model.
@@ -20,13 +21,31 @@ class MovieController extends Controller
     public function behaviors()
     {
         return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
+                   'access' =>
+                   [
+                       'class' => AccessControl::className(),
+                       'only' =>  ['index', 'create', 'view', 'delete'],
+                       'rules' => [
+                           [
+                               'roles' => ['?'],
+                               'allow' => true,
+                               'actions' => ['login'],
+                           ],
+                           [
+                               'roles' => ['@'],
+                               'allow' => true,
+                               'actions' => ['index', 'create', 'view', 'delete'],
+                           ],
+                       ],
+                   ],
+                   'verbs' => [
+                       'class' => VerbFilter::className(),
+                       'actions' => [
+                           'delete' => ['post'],
+                           'delete-author' => ['post'],
+                       ],
+                   ],
+               ];
     }
 
     /**
