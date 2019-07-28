@@ -12,28 +12,11 @@ The template contains the basic features:
 - Debugging
 - Tests (Unit, functional, acceptance)
 
-[![Build Status](https://travis-ci.org/yiisoft/yii2-app-basic.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-app-basic)
-
-DIRECTORY STRUCTURE
--------------------
-
-      assets/             contains assets definition
-      commands/           contains console commands (controllers)
-      config/             contains application configurations
-      controllers/        contains Web controller classes
-      mail/               contains view files for e-mails
-      models/             contains model classes
-      runtime/            contains files generated during runtime
-      tests/              contains various tests for the basic application
-      vendor/             contains dependent 3rd-party packages
-      views/              contains view files for the Web application
-      web/                contains the entry script and Web resources
-
 
 REQUIREMENTS
 ------------
 
-- PHP 5.4.0.
+- PHP 5.4+
 ``` 
 add-apt-repository ppa:ondrej/php && apt update
 apt install php7.3 php7.3-cli php7.3-fpm php7.3-curl php7.3-json php7.3-gd php7.3-mbstring php7.3-zip php7.3-xml
@@ -48,10 +31,12 @@ INSTALLATION
 git clone https://github.com/pceuropa/imdb-search
 cd imdb-search
 composer update
-# run standalone server
-./yii serve
 ~~~
 
+### run standalone server
+```
+./yii serve
+```
 
 ### Install with Docker
 
@@ -72,6 +57,20 @@ You can then access the application through the following URL:
 - The default configuration uses a host-volume in your home directory `.docker-composer` for composer caches
 
 
+DIRECTORY STRUCTURE
+-------------------
+
+      assets/             contains assets definition
+      commands/           contains console commands (controllers)
+      config/             contains application configurations
+      controllers/        contains Web controller classes
+      mail/               contains view files for e-mails
+      models/             contains model classes
+      runtime/            contains files generated during runtime
+      tests/              contains various tests for the basic application
+      vendor/             contains dependent 3rd-party packages
+      views/              contains view files for the Web application
+      web/                contains the entry script and Web resources
 
 CONFIGURATION
 -------------
