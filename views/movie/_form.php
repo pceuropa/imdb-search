@@ -26,19 +26,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'img_url') ?>
 
-    <?= $form->field($model, 'countries') ?>
 
-    <?= $form->field($model, 'languages') ?>
-
-    <?= $form->field($model, 'actors') ?>
-
-    <?= $form->field($model, 'genre') ?>
 
     <?= $form->field($model, 'tagline') ?>
 
-    <?= $form->field($model, 'description') ?>
+    <?= $form->field($model, 'description')->textarea() ?>
 
-    <?= $form->field($model, 'directors') ?>
 
     <?= $form->field($model, 'runtime') ?>
 

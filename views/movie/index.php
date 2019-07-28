@@ -27,14 +27,19 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            '_id',
+            [
+                'attribute' => 'img_url',
+                'format' => 'html',
+                'value' => function ($m, $key) {
+                      return  Html::img($m->img_url, ['class' => 'img-thumbnail', 'alt' => $m->title]);
+                },
+            ],
             'title',
-            'rating',
             'year',
             'users_rating',
-            //'votes',
+            'votes',
+            'rating',
             //'metascore',
-            //'img_url',
             //'countries',
             //'languages',
             //'actors',
@@ -42,7 +47,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'tagline',
             //'description',
             //'directors',
-            //'runtime',
+            'runtime',
             //'imdb_url',
             //'imdb_id',
 

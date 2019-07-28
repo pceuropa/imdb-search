@@ -26,6 +26,10 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
     </p>
 
+
+<div class="row">
+  <div class="col-md-3"> <?= html::img($model->img_url, ['class' => 'img-responsive']) ?></div>
+  <div class="col-md-9">
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
@@ -37,17 +41,23 @@ $this->params['breadcrumbs'][] = $this->title;
             'votes',
             'metascore',
             'img_url',
-            'countries',
-            'languages',
-            'actors',
-            'genre',
+            //'countries',
+            //'languages',
+            //'actors',
+            //'genre',
             'tagline',
             'description',
-            'directors',
+            //'directors',
             'runtime',
             'imdb_url',
             'imdb_id',
         ],
     ]) ?>
+
+
+</div>
+</div>
+
+
 
 </div>
