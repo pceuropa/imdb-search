@@ -10,6 +10,18 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+      'authClientCollection' => [
+        'class' => 'yii\authclient\Collection',
+        'clients' => [
+            'facebook' => [
+                'class' => 'yii\authclient\clients\Facebook',
+                'authUrl' => 'https://www.facebook.com/dialog/oauth?display=popup',
+                'clientId' => '706040240182401',
+                'clientSecret' => '19bc63cead38603f202a362c9eb4b11e',
+                'attributeNames' => ['name', 'email', 'first_name', 'last_name'],
+            ],
+        ],
+        ],
         'request' => [
             'cookieValidationKey' => 'i2PFNzv2OEZXn62f3kVmD-AIyfZMWu2G',
         ],

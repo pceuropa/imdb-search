@@ -15,6 +15,7 @@ use yii\filters\AccessControl;
  */
 class MovieController extends Controller
 {
+
     /**
      * {@inheritdoc}
      */
@@ -24,12 +25,12 @@ class MovieController extends Controller
                    'access' =>
                    [
                        'class' => AccessControl::className(),
-                       'only' =>  ['index', 'create', 'view', 'delete'],
+                       'only' =>  ['index', 'create', 'view', 'delete', 'auth'],
                        'rules' => [
                            [
                                'roles' => ['?'],
                                'allow' => true,
-                               'actions' => ['login'],
+                               'actions' => ['login', 'auth'],
                            ],
                            [
                                'roles' => ['@'],
@@ -47,6 +48,23 @@ class MovieController extends Controller
                    ],
                ];
     }
+    public function actions()
+    {
+        return [
+            'auth' => [
+                'class' => 'yii\authclient\AuthAction',
+                'successCallback' => [$this, 'oAuthSuccess'],
+            ],
+        ];
+    }
+
+
+    public function oAuthSuccess($client)
+    {
+        $userAttributes = $client->getUserAttributes();
+        echo $userAttributes['email'];
+    }
+
 
     /**
      * Lists all Movie models.
