@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 <div class="row">
-  <div class="col-md-3"> <?= html::img($model->img_url, ['class' => 'img-responsive']) ?></div>
+  <div class="col-md-3"> <?= html::img($model->img_url, ['class' => 'img-fluid img-responsive']) ?></div>
   <div class="col-md-9">
     <?= DetailView::widget([
         'model' => $model,

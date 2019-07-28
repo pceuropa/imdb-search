@@ -36,7 +36,7 @@ REQUIREMENTS
 - PHP 5.4.0.
 ``` 
 add-apt-repository ppa:ondrej/php && apt update
-apt install php7.3 php7.3-cli php7.3-fpm php7.3-mysql php7.3-pgsql php7.3-curl php7.3-json php7.3-gd php7.3-mbstring php7.3-zip php7.3-xml
+apt install php7.3 php7.3-cli php7.3-fpm php7.3-curl php7.3-json php7.3-gd php7.3-mbstring php7.3-zip php7.3-xml
 ```
  - Composer
 If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructionsat [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
@@ -48,6 +48,7 @@ INSTALLATION
 git clone https://github.com/pceuropa/imdb-search
 cd imdb-search
 composer update
+# run standalone server
 ./yii serve
 ~~~
 

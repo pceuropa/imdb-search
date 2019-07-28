@@ -27,13 +27,11 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
     <?= $this->render('navbar.php'); ?>
-    <div class="container-fluid">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
         <?= Alert::widget() ?>
         <?= $content ?>
-    </div>
 
 <footer class="footer">
     <div class="container">
